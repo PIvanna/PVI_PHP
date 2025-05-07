@@ -1,0 +1,647 @@
+@font-face {
+  font-family: "Monomakh";
+  src: url("../fonts/Monomakh-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.display_flex_r_sb {
+  display: flex;
+  justify-content: space-between;
+}
+.display_flex_r_sa {
+  display: flex;
+  justify-content: space-between;
+}
+.display_flex_c {
+  display: flex;
+  flex-direction: column;
+}
+.font-Monomakh {
+  font-family: "Monomakh", Arial;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+}
+
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding-top: 100px;
+  justify-content: end;
+  padding-right: 100px;
+}
+main {
+  margin: 60px;
+  width: 80%;
+}
+h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+  text-align: left !important;
+  color: #bc463a;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+
+#but-table-all {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-buttons {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #4286f5;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 40px;
+  line-height: 43px;
+  color: #5c2019;
+  align-self: flex-end;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  background-color: transparent;
+}
+
+.main-buttons img {
+  width: 30px;
+  height: 30px;
+}
+
+#button-del-all {
+  display: none;
+}
+
+.wrapper-table {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrapper-shadow {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000005c;
+  z-index: 4;
+  display: none;
+  overflow-y: auto;
+}
+
+#addStudent,
+#delete-wraper,
+#authForm-wraper,
+#addTask {
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+#addStudent {
+  min-height: 300px;
+}
+
+#authForm-wraper {
+  width: 700px;
+  height: 400px;
+}
+
+#delete-wraper {
+  width: 40%;
+  height: 40%;
+  display: none;
+}
+
+.button-close {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: "Monomakh", Arial;
+  font-size: 50px;
+  line-height: 43px;
+  text-align: center;
+  color: #5c2019;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+h3 {
+  margin: 50px 20px 20px;
+  font-family: "Monomakh", Arial;
+  font-size: 36px;
+  color: #bc463a;
+  line-height: 20px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+#war_text {
+  font-size: 30px;
+  margin: auto;
+  width: 90%;
+  min-height: 20%;
+  line-height: 60px;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #5c2019;
+  margin-bottom: 20px;
+}
+
+#form-add,
+#form-auth,
+#form-task {
+  width: 80%;
+  height: 50%;
+  margin: 0 auto 20px;
+  padding: 0;
+}
+
+#fieldset-add,
+#fieldset-auth,
+#fieldset-task {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: none;
+}
+
+.form-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+}
+
+.form-item label {
+  font-family: "Monomakh", Arial;
+  font-size: 22px;
+  color: #bc463a;
+  line-height: 20px;
+  letter-spacing: 1px;
+  width: 30%;
+}
+
+.form-item select,
+.form-item input {
+  width: 65%;
+  height: 35px;
+  border: 2px solid #5c2019;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 19px;
+  color: #5c2019;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.buttons {
+  width: 26%;
+  height: 60px;
+  align-self: flex-end;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-func-small {
+  width: 40%;
+  height: 50%;
+  background-color: transparent;
+  border: 2px solid #5c2019;
+  border-radius: 5px;
+  color: #5c2019;
+  text-align: center;
+  font-size: 18px;
+}
+
+#button-create,
+#button-save,
+#button-cancel {
+  width: 50%;
+  display: block;
+}
+
+#edit_text,
+#add_text {
+  display: block;
+}
+
+#info-student-wraper,
+#info-tasks-wraper {
+  display: none;
+}
+
+#info-tasks-wraper {
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  border-radius: 10px;
+  z-index: 6;
+}
+
+.pagination {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 2px solid #5c2019;
+  color: #5c2019;
+  font-size: 18px;
+  margin: 0 1px;
+  border-radius: 5px;
+}
+
+.pagination a.active {
+  background-color: transparent;
+  color: #5c2019;
+  border: 2px solid #4286f5;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+#select-teachers {
+  width: 65%;
+  height: 35px;
+  border: 2px solid #5c2019;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 19px;
+  color: #5c2019;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.select2-container {
+  width: 65% !important;
+  margin-bottom: 15px !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+  height: 40px !important; /* фіксована висота */
+  overflow-y: auto !important; /* скрол тільки по вертикалі */
+  overflow-x: hidden !important;
+  border: 2px solid #5c2019 !important;
+  border-radius: 5px !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.select2-selection__rendered {
+  height: 100% !important; /* щоб елементи вміщались в 35px */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2px 5px;
+}
+
+/* Стилізуємо скролбар всередині */
+.select2-selection__rendered::-webkit-scrollbar {
+  width: 5px;
+}
+
+.select2-selection__rendered::-webkit-scrollbar-thumb {
+  background: #5c2019;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 1800px) {
+  main {
+    width: 75%;
+  }
+
+  #addStudent,
+  #delete-wraper,
+  #addTask {
+    width: 600px;
+    height: 450px;
+  }
+
+  #addStudent {
+    min-height: 300px;
+  }
+
+  #delete-wraper {
+    height: 300px;
+  }
+  #war_text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  h3 {
+    font-size: 36px;
+  }
+
+  .form-item label {
+    font-size: 18px;
+  }
+
+  .form-item select,
+  .form-item input {
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .buttons {
+    width: 20%;
+    height: 50px;
+  }
+  .buttons-func-small {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .main-wrapper {
+    padding-right: 50px;
+  }
+  main {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .main-wrapper {
+    padding-right: 100px;
+  }
+
+  #addStudent,
+  #delete-wraper,
+  #addTask {
+    height: 400px;
+  }
+
+  #addStudent {
+    min-height: 300px;
+  }
+
+  #delete-wraper {
+    height: 300px;
+  }
+
+  main {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-wrapper {
+    padding-right: 50px;
+  }
+  main {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    width: 90%;
+    margin: 60px 0 0 20px;
+  }
+
+  #addStudent,
+  #delete-wraper,
+  #addTask {
+    width: 500px;
+  }
+
+  #info-student-wraper {
+    display: none;
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    border-radius: 10px;
+    z-index: 6;
+  }
+
+  h4 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #5c2019;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px;
+    width: 86%;
+    text-align: start;
+  }
+
+  .info-student-p {
+    font-family: "Monomakh", Arial;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #000;
+    height: 20px;
+    line-height: 40px;
+    margin: 20px;
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .info-cap {
+    font-size: 24px;
+    color: #5c2019;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  h2 {
+    font-size: 35px;
+  }
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none;
+  }
+  #addStudent,
+  #delete-wraper,
+  #addTask {
+    width: 400px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .form-item label {
+    font-size: 16px;
+    width: 35%;
+  }
+  .form-item select,
+  .form-item input, 
+  textarea {
+    height: 30px;
+    font-size: 14px;
+    width: 60%;
+  }
+  .buttons {
+    width: 30%;
+    height: 50px;
+  }
+  .buttons-func-small {
+    font-size: 14px;
+  }
+  .button-close {
+    font-size: 40px;
+  }
+  #info-student-wraper {
+    width: 350px;
+    height: 300px;
+  }
+  h4 {
+    font-size: 18px;
+    height: 30px;
+  }
+  .info-student-p {
+    font-size: 14px;
+    margin: 10px 20px;
+  }
+  .info-cap {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+}
+
+@media screen and (max-width: 450px) {
+  #addStudent,
+  #delete-wraper,
+  #addTask {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #info-student-wraper,
+  #addStudent,
+  #delete-wraper,
+  #addTask {
+    width: 100%;
+    max-width: 300px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .form-item label {
+    font-size: 14px;
+    width: 38%;
+    line-height: 30px;
+  }
+  .form-item select,
+  .form-item input {
+    height: 30px;
+    font-size: 14px;
+    width: 60%;
+  }
+  .button-close {
+    font-size: 35px;
+  }
+  h4 {
+    font-size: 17px;
+    height: 30px;
+  }
+  .info-student-p {
+    font-size: 14px;
+    margin: 10px 20px;
+  }
+  .info-cap {
+    font-size: 16px;
+  }
+  .pagination a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .pagination {
+    width: 110%;
+  }
+}
+
+.block-error {
+  width: 65%;
+  position: absolute;
+  min-height: 30px;
+  border-radius: 10px;
+  color: red;
+  border: 1px solid red;
+  right: 0;
+  top: 29px;
+  z-index: 2;
+  background-color: white;
+  line-height: 30px;
+  text-align: center;
+  display: none;
+}
+
+.buttons-auth {
+  width: 40%;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0;
+}

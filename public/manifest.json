@@ -1,0 +1,37 @@
+{
+  "name": "My PWA App",
+  "short_name": "PWA App",
+  "description": "Це прогресивний веб-додаток (PWA) для швидкого та зручного доступу до контенту.",
+
+  "start_url": "/intro.php",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+
+  "icons": [
+    {
+      "src": "/img/android-chrome-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/Project/public/img/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+
+ 
+}
