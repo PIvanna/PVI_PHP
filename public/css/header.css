@@ -1,281 +1,343 @@
+/* /Project/public/css/header.css */
 .display_flex_r_sb {
   display: flex;
   justify-content: space-between;
 }
 .display_flex_r_sa {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* Змінено для кращого розподілу в профілі */
 }
 .display_flex_c {
   display: flex;
   flex-direction: column;
 }
 .font-Monomakh {
-  font-family: "Monomakh", Arial;
+  font-family: "Monomakh", Arial, sans-serif; /* Додано запасні шрифти */
   font-weight: normal;
   font-style: normal;
-  text-decoration:none;
+  text-decoration: none;
   text-align: center;
 }
-.animation {
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease,
-    padding 0.3s ease;
-}
+
 header {
   width: 100%;
   height: 100px;
   background-color: #5c2019;
-  position:absolute;
-  z-index: 3;
+  position: fixed; /* Змінено на fixed для закріплення при прокрутці */
+  top: 0;
+  left: 0;
+  z-index: 1003; /* Збільшено z-index */
+  align-items: center; /* Додано для вертикального вирівнювання вмісту */
 }
 h1 a {
   text-decoration: none;
   color: #f3e0dc;
 }
 h1 {
-  width: 50px;
+  /* width: 50px; - прибрано, щоб текст міг займати потрібну ширину */
   height: 100%;
-  color:#f3e0dc;
+  color: #f3e0dc;
   font-size: 25px;
-  line-height: 100px;
+  line-height: 100px; /* Для вертикального центрування */
   letter-spacing: 1px;
   margin-left: 20px;
+  margin-right: auto; /* Щоб відсунути праву частину хедера */
+}
+
+.wrapper-header {
+  height: 100%; /* Щоб wrapper-header займав всю висоту хедера */
+  /* width: 400px; - прибрано, ширина буде залежати від вмісту */
+  display: flex; /* Вже є, але для ясності */
+  align-items: center; /* Вирівнювання елементів по центру вертикально */
+  margin-right: 20px; /* Відступ справа для всього блоку */
 }
 
 .avatar {
   width: 40px;
   height: 40px;
+  border-radius: 50%; /* Додано для круглих аватарів */
 }
 .username {
-  width: 70%;
+  /* width: 70%; - прибрано, ширина буде адаптивною */
+  max-width: 150px; /* Обмеження максимальної ширини */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 18px;
-  line-height: 28px;
-  color:#f3e0dc;
+  /* line-height: 28px; - не потрібно, якщо батьківський flex вирівнює */
+  color: #f3e0dc;
   letter-spacing: 1.5px;
-  margin-right: 15px;
+  margin-left: 10px; /* Відступ від аватара */
+  margin-right: 15px; /* Відступ до дзвіночка */
 }
 .profile {
-  width: 80%;
-  position: relative;
+  /* width: 80%; - прибрано */
+  display: flex; /* Вже є, але для ясності */
   align-items: center;
-  padding: 15px;
+  position: relative;
+  /* padding: 15px; - може бути зайвим, якщо є відступи у дочірніх */
   cursor: pointer;
+  height: 100%; /* Щоб ховер працював по всій висоті */
 }
 #drop-profile {
-  width: 320px;
-  height: 0;
+  width: 200px; /* Зменшено для компактності */
   position: absolute;
-  top: 100px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  top: 100%; /* Розміщуємо під профілем */
+  right: 0; /* Вирівнюємо по правому краю профіля */
+  border-bottom-right-radius: 10px; /* Менші радіуси */
+  border-bottom-left-radius: 10px;
   background-color: #5c2019;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь для випадаючого меню */
+  z-index: 1000; /* Щоб було над іншим контентом */
+
+  /* Анімація для випадаючого меню профілю */
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease, visibility 0s ease 0.3s;
 }
 .profile:hover #drop-profile {
-  height: 150px;
+  height: auto; /* Висота за вмістом */
+  min-height: 100px; /* Мінімальна висота для двох пунктів */
   opacity: 1;
   visibility: visible;
+  transition-delay: 0s, 0s, 0s; /* Скинути затримку для показу */
 }
 .drop-profile-p {
-  height: 50%;
+  /* height: 50%; - висота буде за контентом */
   width: 100%;
   font-size: 14px;
-  line-height: 75px;
-  letter-spacing: 1.5px;
-  margin-right: 15px;
+  line-height: 50px; /* Висота рядка для вирівнювання тексту */
+  letter-spacing: 1px;
+  /* margin-right: 15px; - не потрібно, якщо текст по центру */
+  padding: 0 15px; /* Горизонтальні відступи */
+  box-sizing: border-box;
+}
+.drop-profile-p:hover {
+  background-color: rgba(243, 224, 220, 0.1); /* Легкий ховер ефект */
 }
 .drop-profile-p a {
   text-decoration: none;
   color: #f3e0dc;
+  display: block; /* Щоб посилання займало всю ширину */
+  width: 100%;
+  height: 100%;
 }
+
 .notif {
-  width: 15%;
+  /* width: 15%; - прибрано, ширина буде за контентом */
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Центруємо дзвіночок */
   align-items: center;
   position: relative;
-  margin-right: 20px;
+  margin-right: 20px; /* Відступ від профілю */
+  cursor: pointer; /* Додано курсор */
 }
-.notif img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  z-index: 2;
-}
-#sign-not {
-  width: 10px;
-  height: 10px;
-  background-color: #4286f5;
-  border-radius: 50%;
-  top: 25px;
-  right: 0;
-  position: absolute;
-  display: block;
-}
-#message-wraper {
-  width: 400px;
-  height: 0;
-  background-color: #d4a59a;
-  position: absolute;
-  top: 100px;
-  left: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 20px;
-}
-.notif:hover #message-wraper {
-  opacity: 1;
-  height: 380px;
-  visibility: visible;
-}
-.message-elem {
-  width: 360px;
-  height: 80px;
-  align-items: center;
-}
-.message-avatar {
-  display: block;
-  width: 35px;
-  height: 35px;
-  border: none;
-  border-radius: 50%;
-  z-index: 2;
-  margin-bottom: 5px;
-}
-.message-item {
-  position: relative;
-  border-radius: 10px;
-  padding: 20px;
-  width: 75%;
-  height: 50px;
-  margin-left: 15px;
-  background-color: #5c2019;
-}
-.message-item::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 20px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #5c2019;
-}
-.message-item::after {
-  content: "";
-  position: absolute;
-  left: -9px;
-  top: 20px;
-  width: 0;
-  height: 0;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-right: 9px solid #5c2019;
-}
-.message-profile {
-  width: 60px;
-  height: 50px;
-  align-items: center;
-  font-family: Arial;
-  font-size: 16px;
-  color: #000000;
-}
-#but-bell {
-  background-color: transparent;
-  border: none;
-}
-
-.wrapper-header {
-  width: 400px;
-  position: relative;
+.notif > a {
+  /* Стилі для посилання, якщо воно є навколо дзвіночка */
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+#bell {
+  /* Стилі для самого зображення дзвіночка */
+  display: block;
+  width: 30px; /* Зменшено розмір дзвіночка */
+  height: 30px;
+  /* border: none; - не потрібно для img */
+  /* border-radius: 50%; - не потрібно для img */
+  /* z-index: 2; - не потрібно, якщо .notif має position: relative */
 }
 
-#login-button{
-  width: 150px;
-  height: 50px;
-  align-self: center;
-  margin-right: 40px;
-  border: 3px solid #f3e0dc;
-  background-color: #5c2019;
-  color: #f3e0dc;
-  border-radius: 15px;
-  font-family: "Monomakh", Arial;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-  font-size: 25px;
-  letter-spacing: 2px;
+#sign-not {
+  position: absolute;
+  top: 0px; /* Відкориговано позицію */
+  right: -2px; /* Відкориговано позицію */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 1px 5px; /* Зменшено padding */
+  font-size: 0.65rem; /* Зменшено шрифт */
+  font-weight: bold;
+  display: none;
+  line-height: normal; /* Для кращого вертикального вирівнювання тексту */
+  text-align: center;
+  min-width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid #5c2019; /* Обводка кольору хедера для контрасту */
 }
+
+#message-wraper {
+  position: absolute;
+  top: calc(100% + 5px); 
+  right: -10px; 
+  width: 340px; /* Трохи ширше для вмісту */
+  max-height: 380px; 
+  overflow-y: auto;
+  background-color: #f9f9f9; /* Світліший фон для кращого контрасту */
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Більш виразна тінь */
+  z-index: 1000;
+  display: flex; 
+  flex-direction: column;
+  
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  padding: 0px; 
+  box-sizing: border-box;
+  
+  transition: height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              visibility 0s ease 0.3s, /* Приховувати visibility після анімації */
+              padding 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+#message-wraper.visible {
+  opacity: 1;
+  visibility: visible;
+  padding: 8px; /* Додаємо padding, коли блок видимий */
+  transition-delay: 0s, 0s, 0s, 0s; /* Скинути затримки для показу */
+  /* Висота встановлюється через JS */
+}
+
+#message-wraper .message-elem {
+  width: 100%; /* Займає всю доступну ширину в message-wraper */
+  margin: 0 0 8px 0; /* Нижній відступ між елементами */
+  padding: 12px; /* Збільшено внутрішні відступи */
+  border-bottom: none; /* Прибираємо бордер, якщо є padding */
+  background-color: #ffffff; /* Фон кожного елемента */
+  border-radius: 6px; /* Закруглення для кожного елемента */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Легка тінь для кожного елемента */
+  cursor: pointer;
+  display: flex; 
+  align-items: center;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+#message-wraper .message-elem:last-child {
+  margin-bottom: 0;
+}
+#message-wraper .message-elem:hover {
+  background-color: #eef4f8; /* Колір ховеру */
+}
+
+#message-wraper .message-profile {
+  width: auto; 
+  min-width: 45px; 
+  height: auto;
+  align-items: center;
+  margin-right: 12px; /* Збільшено відступ */
+  color: #333; 
+  flex-shrink: 0; /* Щоб профіль не стискався */
+}
+#message-wraper .message-avatar {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 4px; 
+  background-color: #e0e0e0; /* Заглушка, якщо немає зображення */
+  object-fit: cover; /* Щоб зображення гарно вписувалось */
+}
+#message-wraper .message-profile p {
+  font-size: 0.8rem; /* Трохи збільшено */
+  color: #444; /* Темніший колір для імені */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70px; 
+  text-align: center;
+  margin-top: 3px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Більш стандартний шрифт */
+}
+
+#message-wraper .message-item {
+  flex-grow: 1; 
+  font-size: 0.9rem; 
+  color: #555; /* Колір тексту повідомлення */
+  background-color: transparent; 
+  padding: 0; 
+  border-radius: 0; 
+  
+  /* Дозволяємо перенос тексту, якщо він не вміщується */
+  white-space: normal; /* Змінено з nowrap */
+  overflow: hidden; /* Все ще приховуємо надлишок */
+  text-overflow: ellipsis; /* Показуємо три крапки */
+  /* Обмеження тексту двома рядками (приклад) */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Кількість рядків */
+  -webkit-box-orient: vertical;  
+  
+  position: static; 
+  margin-left: 0; 
+  /* display: block; - замінено на -webkit-box для багаторядкового ellipsis */
+}
+/* Прибираємо хвостик для прев'ю, він тут зайвий */
+#message-wraper .message-item::before,
+#message-wraper .message-item::after {
+  display: none;
+}
+
+#bell.has-notifications {
+  animation: bellRing 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes bellRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Медіа-запити - перегляньте та адаптуйте за потреби */
 @media screen and (max-width: 760px) {
-  .wrapper-header,
-  #message-wraper {
-    width: 320px;
+  .wrapper-header {
+    /* width: 320px; - прибрано */
+    margin-right: 10px; /* Менший відступ */
   }
   #drop-profile {
-    width: 252px;
+    width: 180px; /* Зменшено */
   }
   #message-wraper {
-    height: 280px;
-  }
-  .message-elem {
-    width: 288px;
+    width: 280px; /* Зменшено */
+    right: 0; /* Вирівнювання по правому краю */
   }
   .username {
     font-size: 16px;
-    width: 71%;
-    margin-left: 5px;
+    max-width: 100px;
   }
 }
-
-@media screen and (max-width: 550px) {
-  
-  #drop-profile {
-    width: 252px;
-  }
-}
-
 
 @media screen and (max-width: 460px) {
-  .wrapper-header,
-  #drop-profile,
-  #message-wraper {
-    width: 280px;
+  h1 {
+    font-size: 20px;
+    margin-left: 10px;
   }
-
+  .wrapper-header {
+    /* width: 280px; - прибрано */
+  }
   #drop-profile {
-    width: 220px;
+    width: 160px;
   }
   #message-wraper {
-    height: 280px;
+    width: calc(100vw - 20px); /* Майже на всю ширину екрану */
+    max-width: 280px;
+    right: 5px; /* Невеликий відступ */
   }
-  .message-elem {
-    width: 252px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .wrapper-header,
-  #drop-profile,
-  #message-wraper {
-    width: 200px;
-  }
-  .bell {
-    width: 35px;
-    height: 35px;
-  }
-  .notif {
-    width: 10%;
-  }
-  .message-elem {
-    width: 180px;
+  #message-wraper .message-elem {
+    width: 100%;
   }
 }

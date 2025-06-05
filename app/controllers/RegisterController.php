@@ -14,7 +14,7 @@ class RegisterController
 
       // Дебаг: виводимо всі отримані дані
       error_log("Received POST data: " . print_r($_POST, true));
-      $_
+
       $name = $_POST['name'];
       $surname = $_POST['surname'];
       $birthday = $_POST['birthday'];

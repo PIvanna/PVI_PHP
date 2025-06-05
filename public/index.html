@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Мій Месенджер - CMS</title>
+    <link
+      rel="stylesheet"
+      href="http://localhost/Project/public/css/main.css"
+    />
+    <link rel="stylesheet" href="./css/message.css" />
+  </head>
+  <body>
+    <div id="header-placeholder">
+      <!-- CMS Title, Icons, User Name (Assumed to be populated by components.js or main.css) -->
+    </div>
+    <div class="content-below-header">
+      <div id="sidebar-placeholder">
+        <!-- Dashboard, Tasks, Table Links (Assumed) -->
+      </div>
+
+      <div class="main-wrapper">
+        <main>
+          <h2 class="font-Monomakh" id="main-name-table">Students</h2>
+          <!-- Ваш існуючий заголовок -->
+
+          <!-- CHAT HTML STARTS HERE -->
+          <div id="mainChatContentArea">
+            <!-- <h1 class="page-title-chat">Messages</h1> -->
+            <!-- Цей заголовок для чату, можливо, зайвий, якщо є #main-name-table -->
+            <div id="chatInterface">
+              <div id="chatListPanel">
+                <div class="chat-list-header display_flex_r_sb">
+                  <span>Chat room</span>
+                  <button id="newChatRoomButton">+ New chat room</button>
+                </div>
+                <div id="currentUserDisplay">
+                  Chat user: <span id="usernamePlaceholder"></span>
+                </div>
+                <ul id="userList">
+                  <!-- User list items will be populated by JavaScript -->
+                </ul>
+              </div>
+              <div id="chatViewPanel">
+                <div id="chatRoomHeader" class="display_flex_r_sb">
+                  <h3 id="chatPartnerName">Оберіть чат</h3>
+                  <div id="chatMembers">
+                    <!-- Potential member icons or count -->
+                  </div>
+                </div>
+                <div id="messages">
+                  <!-- Messages will be populated here -->
+                </div>
+                <div id="inputArea">
+                  <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Введіть повідомлення..."
+                    disabled
+                  />
+                  <button id="sendButton" disabled>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CHAT HTML ENDS HERE -->
+          <div id="newUserChatModal" class="modal">
+            <div class="modal-content">
+              <span class="close-modal-button">×</span>
+              <h2>Створити новий чат/групу</h2>
+              <div class="chat-creation-options">
+                  <label for="chatGroupName">Назва групи (залиште порожнім для чату 1-на-1):</label>
+                  <input type="text" id="chatGroupName" placeholder="Наприклад, Проект Альфа">
+              </div>
+              <input
+                type="text"
+                id="searchUserInput"
+                placeholder="Пошук користувача для додавання..."
+              />
+              <div class="user-list-container">
+                <h3>Викладачі</h3>
+                <ul id="modalTeacherList" class="modal-user-list">
+                  <!-- Teachers will be populated here -->
+                </ul>
+                <h3>Студенти</h3>
+                <ul id="modalStudentList" class="modal-user-list">
+                  <!-- Students will be populated here -->
+                </ul>
+              </div>
+              <div class="modal-footer">
+                  <button id="createChatOrGroupButton">Створити чат/групу</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="./js/message.js"></script>
+  </body>
+</html>
